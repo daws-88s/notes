@@ -1,0 +1,119 @@
+1. file or directory not found -> refer the key either by absolute or relative path
+2. SG check inbound and outbound rules..
+	All traffic All ports source 0.0.0.0/0
+3. key pair, while importing no new line
+
+uname -> system information
+ls -ltr -> latest files at the bottom in long format
+ls -la
+touch
+cat -> read or enter the text
+cat >
+cat >>
+rm
+rmdir -> remove directory
+cp
+mv
+head and tail
+wget
+curl
+grep -> search for the content
+cut and awk
+
+cut -d ":" -f1
+awk -F "" '{print $NF}'
+
+awk -F ":" '$3>=1000 {print $1, $3}'
+
+vim editor -> visually improved
+
+vim <file-name> -> open the file
+create and open the file
+
+colon mode
+===========
+:q -> quit
+:wq -> save the file
+:q! -> dont save any changes, force quit
+:set nu -> display numbers
+:<line-number> -> cursor goes particular line number
+:/<word-to-search> -> top to bottom
+:?<word-to-search> -> bottom to top
+:<line-number>d -> deletes that line
+:%d -> delete everything
+:noh -> dont highlight
+:<line-number>s/<word-to-find>/replace-word -> replaces first occurence
+:<line-number>s/<word-to-find>/replace-word/g -> all occurences
+:%s/<word-to-find>/replace-word/g -> all occurences in all lines
+
+Esc Mode
+=========
+gg -> takes to top of the file
+shift+g -> takes us to bottom of the file
+u -> undo
+ctrl+r -> redo
+dd -> deletes the line
+yy -> copy the line
+p -> paste below that line
+shift+p -> paste above that line
+
+
+User Management
+===============
+user group roles permissions
+
+user -> human
+group -> group of humans, team
+roles -> position
+permissions -> access level to that roles
+
+CRUD
+
+-> user create
+-> create group/team
+-> assign user to that group
+
+-> remove user from group
+-> delete user
+
+useradd <user-name>
+id <user-name>
+cat /etc/passwd -> all users info
+cat /etc/group -> display all the groups in server
+
+A user in Linux will have only one primary group and atleast one secondary group
+
+when you create user, group also will be created with same name
+
+groupadd devops
+
+usermod -g <group-name> <user-name>
+usermod -g devops ramesh
+usermod -aG testing ramesh
+
+passwd ramesh -> set the password
+
+by default only key-based authentications are enabled
+
+/etc/ssh/sshd_config -> ssh configs are here
+sshd -t -> check the syntax of config
+
+How to give sudo access to user
+
+/etc/sudoers
+
+gpasswd -d <user-name> <group-name>
+
+.zip -> windows zip format
+.tar.gz
+
+tar -cf <file-name>.tar.gz <folder>
+tar -xf <file-name>.tar.gz
+
+1. lock him immidiately
+2. remove from all groups
+3. take backup of his home folder
+4. delete the user
+
+userdel -r ramesh -> remove user ramesh and his home directory
+
