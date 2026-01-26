@@ -1,0 +1,74 @@
+Linus File system heirarchy
+
+/bin -> essential user binaries/softwares/commands
+/boot -> OS booting process commands or files
+/dev -> devices. everything in Linux is file including keyboard, mouse, disk, USB, etc.
+/etc -> extra configuration. Configurations related to system or user installed packages are here
+/home -> any user related directories are here, /home/<username>
+/lib and /lib64 -> all required libraries are here..
+/media -> removable disks like usb, DVD, etc, are mounted here automatically in desktop environments
+/mnt -> used to mount extra disks in linux server are here for temp purpose
+/opt -> optional. when you installed a software manually you do it here. /opt/roboshop, /opt/tomcat, /opt/jobss etc.
+/proc -> processor information, /proc/cpuinfo, /proc/meminfo. running process info is here related to kernel
+/root -> root user home directory
+/run -> running process information 
+/sbin -> essential root user binaries/softwares/commands
+/srv -> service, data related to system like HTML directory, NFS directory, etc.
+/swap -> virutal RAM. swap usage is more means system is under stress
+/sys -> kernel sub systems
+/tmp -> temporary directory in linux
+/usr -> user related commands and libs are here
+/var -> variable files, continously growing files are here
+
+Hard Disk vs Network Disk
+=========================
+hard disk near to comupter
+network disk, any where in the internet like google drive, MS drive, S3, etc..
+
+OS, DB always should be in HD, HD latency is less
+normal files and objects are stored in network storages
+
+at a time one HD can be mounted to only one computer.
+Network storages can be attached to multiple computers
+
+
+How to add extra disk to Linux server
+=====================================
+1. create EBS volume
+2. attach to the instance, EBS volume should in the same AZ as EC2
+
+nvme0n1 -> root disk -> OS default purpose
+nvme1n1 -> new disk -> database data, imp files and configurations are stored here..
+
+3. list the block devices, you can see newly attached disk
+4. create partition from the disk
+sudo parted /dev/nvme1n1 --script mklabel gpt mkpart primary 0% 100%
+
+/var/lib/mysql -> mysql data is stored here
+/data -> redis
+
+
+UUID="0683949b-ce15-4d77-b202-4d47ee2a863a"
+
+UUID=0683949b-ce15-4d77-b202-4d47ee2a863a   /data   xfs   defaults,nofail   0   2
+
+
+memory usage commands
+===================
+df -hT -> disk information
+free -m -> RAM usage
+
+top 10 usages
+ps aux --sort -rss | head -10
+
+du -sh *
+memory occupied by files and folders
+
+growpart nvme1n1 1
+
+xfs_growfs /data
+
+tomorrow topics
+===============
+inode, hardlink and symlink
+Shell scripting
