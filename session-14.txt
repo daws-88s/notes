@@ -1,0 +1,110 @@
+inode symlink hardlink
+
+inode = stores metadata of the file/directory
+
+file type -> file/directory/link
+Owner group
+Permissions
+size
+create, update, etc
+actual memory block address
+
+inode does not store actual file content
+
+symlink == shortlink == softlink
+1. short cut to the file/folder
+2. inode number is different for symlink
+3. if actual file is removed, then symlink will break
+4. uses for backward compatability, switching versions and rollback is easy
+5. You can create symlink for folders and files also
+6. You can create symlink across different filesystem
+
+YUM -> Before RHEL-8 YUM is the package manager
+RHEL-8 DNF is the package manager
+
+app-3
+app-4
+
+/var/lib/jenkins -> jenkins-2.8
+
+jenkins-2.9
+
+/var/lib/jenkins -> jenkins-2.9
+
+Hardlink
+=========
+1. You can't create hardlink in another filesystem
+2. Hardlink is same as original file but can be different name
+3. hardlink inode numbers are same
+4. they points to same memory location, so memory is not wasted
+5. you can't create hardlink to folders
+6. hardlinks are used for backup.
+7. when all links are deleted, then only file will be deleted.
+
+using inode number and find command within the same FS
+
+1. time taking
+2. human errors
+3. everytime from the scratch
+4. can't rely
+5. if scale is increased manual way is not possible
+
+scripting
+===========
+commands in a file and run it called scripting
+
+where to store scripts?
+===========
+git -> vcs
+
+1. version control
+2. who did the changes, when did the changes
+3. you can track who did the changes
+4. restoring is easy
+5. review is also easy -> Pull Requests
+6. secure place to store the code
+
+centralised vs distributed
+===========================
+SVN -> sub version control
+
+10 files
+9 files 
+staging/temp area -> add 9 files to staging area
+then commit to local repo
+
+1. clone the repo -> first time download
+
+main/master is the default branch
+
+#!/bin/bash -> shebang
+
+shebang is the interpreter of the code in shell script that checks and compiles for errors
+
+bash scripting == shell scripting
+
+2. add files to staging area
+
+git add <file-name>
+
+git config --global user.email "info@joindevops.com"
+git config --global user.name "Sivakumar Reddy M"
+
+3. commit to local repo
+
+git commit -m "hello world completed"
+
+git push origin main
+
+don't edit files inside linux server...
+
+tomorrow's session
+==================
+variables
+data types
+conditions
+loops
+functions
+error handling
+
+OOPS
