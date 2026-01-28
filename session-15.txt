@@ -1,0 +1,165 @@
+1. Create repo either in organisation or directly
+2. Clone repo in laptop
+3. write something
+4. git add ., git add <file-name>
+5. git commit -m "message"
+6. git push origin main
+
+git config --global user.name
+git config --global user.email
+
+write only in laptops
+don't write in linux servers
+only pull linux
+
+95% thinking+design 5% coding
+
+pseudo code -> no syntax, just assumption
+
+if today is sunday, enjoy the holiday otherwise go to school
+
+today=wednesday
+if(today != sunday){
+	print ("goto school")
+}
+else{
+	print("take holiday, enjoy")
+}
+
+15
+
+15/2 -> 1
+if reminder is 0 -> even
+otherwise odd
+
+number=15
+reminder=15%2
+reminder=1
+
+if(reminder == 0){
+	print("even number")
+}
+else{
+	print("odd number")
+}
+
+variables
+data types
+conditions
+functions
+loops
+error handling
+
+let x=1, y=0
+
+derive the formula
+
+submit finally
+
+variables are like containers that holds something
+
+DRY -> Dont repeat yourself
+change in one place reflect everywhere you refer
+easy to maintain
+readable
+
+PERSON1=Suresh
+PERSON2=Ramesh
+
+$VAR_NAME
+${VAR_NAME}
+
+sh 03-conversation.sh Suresh Ramesh
+args == parameters
+
+$1=Suresh
+$2=Ramesh
+
+I want a command to be executed and take the output into variable, how to do that?
+
+
+VAR_NAME=$(command)
+
+Special variables
+=================
+$1 $2 ... $N args passed to script
+All variables passed to script: $@
+Number of variables passed to script: $#
+Script name: $0
+Present which directory you are in: $PWD
+Who is running this script: $USER
+Home direcory of the user: $Home
+PID of the script: $$
+sleep 100 &
+Background process id: $!
+Exit status of previous command: $?
+
+$@ vs $*
+=========
+$@ treats args seperately
+$* treats as single args
+
+data types
+==============
+variables are holding data..
+
+mobile number -> numbers
+	integers -> -33,768 -> 33,768
+	float -> 45.90
+	decimanl -> long number
+	complex -> 4+8i
+names -> string
+major? -> yes or no boolean
+skills -> devops aws docker kubernetes -> list of skills
+skills -> map or dictionary
+	devops: 4 -> key -> value
+	docker: 3
+	kubernetes: 2
+	
+areane4 -> 5
+speed round up -> 8.2km/sec -> 8km/sec
+copied code
+
+integer speed=8km/sec
+integer speed=8.2km/sec
+
+number
+string
+
+everything is string in shell
+
+position/index in coding starts from 0
+
+conditions
+==========
+
+if or when
+
+if [ expression ]; then
+	code here
+fi
+
+if [ expression ]; then
+	code here
+elif [ expression ]; then
+	code here
+else
+	code here
+fi
+
+EXIT code
+==========
+0-127
+
+0 -> success
+anything else -> failure
+
+nginx
+
+dnf install nginx -y
+
+if root user then success
+otherwise failure
+
+root user id -> 0
+other users -> greater than 0
